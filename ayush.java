@@ -31,18 +31,38 @@ class flightinfo
         flightdetails[2][3] = "KOLKATA";
         flightdetails[2][4] = "CHENNAI";
         flightdetails[2][5] = "SHRINAGAR";
+
+        flightdetails[3][1] = "PANAGI";
+        flightdetails[3][2] = "DEHRADUN";
+        flightdetails[3][3] = "JAIPUR";
+        flightdetails[3][4] = "BOMBAY";
+        flightdetails[3][5] = "HYDERABAD";
+
+        flightdetails[4][1] = "7000"; 
+        flightdetails[4][2] = "9000"; 
+        flightdetails[4][3] = "8500"; 
+        flightdetails[4][4] = "4400"; 
+        flightdetails[4][5] = "10000"; 
     
         
         for(int i = 0; i<6; i++)
         {
-            for(int j = 0; j<3; j++)
+            for(int j = 0; j<5; j++)
             {
-                System.out.print(flightdetails[j][i]+"\t");
+                System.out.print("\t" + flightdetails[j][i]);
             }
             System.out.println();
         }
     }
 
+}
+
+class reservation extends flightinfo
+{
+    public static void booking()
+    {
+        
+    }
 }
 
 public class Airline extends flightinfo
