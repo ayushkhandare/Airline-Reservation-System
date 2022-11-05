@@ -3,70 +3,76 @@ import java.util.*;
 
 class flightinfo 
 {
+    public String FlightNo;
+    public String Source;
+    public String Destination;
+    public int Fare;
 
     public static void flightdetails()
     {
-        //System.out.println("Sr.no\t Flight Number\t Source\t Destination \tFare(Rs.)");
-        String flightdetails[][]  = new String[6][6];
+        flightinfo[] arr;
+        arr = new flightinfo[5];
+
+        String FlightNo;
+        String Source;
+        String Destination;
+        int Fare;
+        FlightNo = "6E404";
+        Source = "BOMBAY";
+        Destination = "PANAGI";
+        Fare = 7000;
+        arr[0] = new flightinfo(FlightNo, Source, Destination, Fare);
         
-        flightdetails[0][0] =  "Sr.no";
-        flightdetails[1][0] =  "FlightNo.";
-        flightdetails[2][0] =  "Source";
-        flightdetails[3][0] =  "Destination";
-        flightdetails[4][0] =  "Fare(Rs.)";
-
-        for(int i = 1; i<6; i++)
-        {
-            String s=Integer.toString(i); 
-            flightdetails[0][i] = s;
-        }
-        flightdetails[1][1] =  "6E404";
-        flightdetails[1][2] =  "SE479";
-        flightdetails[1][3] =  "AK401";
-        flightdetails[1][4] =  "SJ293";
-        flightdetails[1][5] =  "7H781";
-
-        flightdetails[2][1] = "BOMBAY";
-        flightdetails[2][2] = "DELHI";
-        flightdetails[2][3] = "KOLKATA";
-        flightdetails[2][4] = "CHENNAI";
-        flightdetails[2][5] = "SHRINAGAR";
-
-        flightdetails[3][1] = "PANAGI";
-        flightdetails[3][2] = "DEHRADUN";
-        flightdetails[3][3] = "JAIPUR";
-        flightdetails[3][4] = "BOMBAY";
-        flightdetails[3][5] = "HYDERABAD";
-
-        flightdetails[4][1] = "7000"; 
-        flightdetails[4][2] = "9000"; 
-        flightdetails[4][3] = "8500"; 
-        flightdetails[4][4] = "4400"; 
-        flightdetails[4][5] = "10000"; 
-    
+        FlightNo = "SE479";
+        Source = "DELHI";
+        Destination = "DEHRADUN";
+        Fare = 9000;
+        arr[1] = new flightinfo(FlightNo, Source, Destination, Fare);
         
-        for(int i = 0; i<6; i++)
+        FlightNo = "AK401";
+        Source = "KOLKATA";
+        Destination = "JAIPUR";
+        Fare = 8500;
+        arr[2] = new flightinfo(FlightNo, Source, Destination, Fare);
+        
+        FlightNo = "SJ293";
+        Source = "CHENNAI";
+        Destination = "BOMBAY";
+        Fare = 4400;
+        arr[3] = new flightinfo(FlightNo, Source, Destination, Fare);
+        
+        FlightNo = "7H781";
+        Source = "SHRINAGAR";
+        Destination = "HYDERABAD";
+        Fare = 10000;
+        arr[4] = new flightinfo(FlightNo, Source, Destination, Fare);
+
+        System.out.printf("%-15s%-15s%-15s%-15s%-18s%n","Sr. No.", "FlightNo.", "Source", "Destination", "Fare");
+        for(int i=0;i<arr.length;i++)
         {
-            for(int j = 0; j<5; j++)
-            {
-                System.out.print("\t" + flightdetails[j][i]);
-            }
-            System.out.println();
+            System.out.printf("%-15s%-15s%-15s%-15s%-18s%n", i+1, arr[i].FlightNo, arr[i].Source, arr[i].Destination, arr[i].Fare);
         }
+
+            
     }
 
-}
-
-class reservation extends flightinfo
-{
-    public static void booking()
+    public flightinfo(String FlightNo, String Source, String Destination, int Fare)
     {
-        
+        this.FlightNo = FlightNo;
+        this.Source = Source;
+        this.Destination = Destination;
+        this.Fare = Fare;
     }
+
 }
+
 
 public class Airline extends flightinfo
 {
+    public Airline(String FlightNo, String Source, String Destination, int Fare)
+    {
+        super(FlightNo, Source, Destination, Fare);
+    }
     public static void main(String[] args) 
     {
         flightdetails();
