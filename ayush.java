@@ -66,8 +66,20 @@ class flightinfo
 
 }
 
+class reservation extends flightinfo
+{
+    public reservation(String FlightNo, String Source, String Destination, int Fare)
+    {
+        super(FlightNo, Source, Destination, Fare);
+    }
 
-public class Airline extends flightinfo
+    public static void booking() 
+    {
+        
+    }
+}
+
+public class Airline extends reservation
 {
     public Airline(String FlightNo, String Source, String Destination, int Fare)
     {
