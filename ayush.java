@@ -184,26 +184,35 @@ public class Airline
                     break;
                 
                 case 4:
-                    System.out.println();
-                    System.out.print("Srno\t");
-                    System.out.print("Flight Number\t"); 
-                    System.out.print("Source\t\t"); 
-                    System.out.print("Destination\t");
-                    System.out.print("Fare\n");    
-                    
-                    for(int i=0;i<book.size();i++)
+                    if(book.size() == 0)
                     {
-                        System.out.print(book.get(i).srno+"\t");
-                        System.out.print(book.get(i).FlightNo+"\t\t"); 
-                        System.out.print(book.get(i).Source+"\t\t"); 
-                        System.out.print(book.get(i).Destination+"\t\t");
-                        System.out.print(book.get(i).Fare);
-                        System.out.println();
+                        System.out.println("You have no bookings");
                     }
+                    else
+                    {
+                        System.out.println();
+                        System.out.print("Srno\t");
+                        System.out.print("Flight Number\t"); 
+                        System.out.print("Source\t\t"); 
+                        System.out.print("Destination\t");
+                        System.out.print("Fare\n");    
 
+                        for(int i=0;i<book.size();i++)
+                        {
+                            System.out.print(book.get(i).srno+"\t");
+                            System.out.print(book.get(i).FlightNo+"\t\t"); 
+                            System.out.print(book.get(i).Source+"\t\t"); 
+                            System.out.print(book.get(i).Destination+"\t\t");
+                            System.out.print(book.get(i).Fare);
+                            System.out.println();
+                        }
+                    }
+                    break;
+         
                 case 5:
                     System.out.println("EXIT");
-                    System.exit(0); break;
+                    System.exit(0); 
+                    break;
             }
         }
     }
